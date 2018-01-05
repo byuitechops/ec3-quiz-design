@@ -1,0 +1,373 @@
+﻿/* defaults*/
+[class*="icon-"], [class*="icon-"]:before {
+    /*default color*/
+    color: #ffffff;
+}
+
+[class*="icon-"] {
+    position: relative;
+}
+
+    [class*="icon-"].pointer:after {
+        display: inline-block;
+        content: "-";
+        font-size: 1.2em;
+        position: absolute;
+        background-color: #FFF;
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        left: -10px;
+        top: -10px;
+    }
+
+.icon-unsynced:before {
+    color: #dc4831;
+}
+
+.icon-alert:before {
+    color: #FF5438;
+}
+
+.icon-home:before {
+    padding-right: 3px;
+    color: #1A8290;
+}
+
+.icon-info:before {
+    font-size: 21px;
+    color: #899FB5;
+}
+
+.icon-mail:before {
+    color: #1A8290;
+}
+
+.icon-phone:before {
+    color: #1A8290;
+}
+
+.icon-plus {
+    vertical-align: -1px;
+    margin-right: 4px;
+}
+/* UI fixes for sort icons*/
+.icon-sortDown, .icon-sortUp {
+    width: 32px;
+    border: 1px solid #D5E9E2;
+    vertical-align: middle !important;
+}
+
+    .icon-sortDown:before, .icon-sortUp:before {
+        font-size: 19px;
+        vertical-align: -4px;
+        padding-left: 5px;
+    }
+
+.icon-versionL:before {
+    color: #1D8181;
+    font-size: 1.4em;
+}
+
+.icon-versionS:before {
+    color: #C6472F;
+    font-size: 1.4em;
+}
+
+/* style */
+@font-face {
+    font-family: 'path_icons';
+    src: url('fonts/path_icons.eot?fxz3qr');
+    src: url('fonts/path_icons.eot?fxz3qr#iefix') format('embedded-opentype'), url('fonts/path_icons.ttf?fxz3qr') format('truetype'), url('fonts/path_icons.woff?fxz3qr') format('woff'), url('fonts/path_icons.svg?fxz3qr#path_icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'path_icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-circleHalf:before {
+    content: "\e637";
+}
+
+
+
+
+
+
+
+.icon-star:before {
+    content: "\e638";
+}
+
+
+.icon-refresh:before {
+    content: "\e639";
+}
+
+.icon-alert:before {
+    content: "\e600";
+}
+
+.icon-announcement:before {
+    content: "\e601";
+}
+
+.icon-applicants:before {
+    content: "\e602";
+}
+
+.icon-approved:before {
+    content: "\e603";
+}
+
+.icon-arrowRight:before {
+    content: "\e606";
+}
+
+.icon-arrowDown:before {
+    content: "\e604";
+}
+
+.icon-arrowLeft:before {
+    content: "\e605";
+}
+
+.icon-arrowUp:before {
+    content: "\e607";
+}
+
+.icon-assessment:before {
+    content: "\e608";
+}
+
+.icon-balance:before {
+    content: "\e609";
+}
+
+.icon-calendar:before {
+    content: "\e60a";
+}
+
+.icon-certificate:before {
+    content: "\e60b";
+}
+
+.icon-checklist:before {
+    content: "\e60c";
+}
+
+.icon-check:before {
+    content: "\e60d";
+}
+
+.icon-checkCircle:before {
+    content: "\e60e";
+}
+
+.icon-chevronDown:before {
+    content: "\e60f";
+}
+
+.icon-chevronLeft:before {
+    content: "\e610";
+}
+
+.icon-chevronRight:before {
+    content: "\e611";
+}
+
+.icon-chevronUp:before {
+    content: "\e612";
+}
+
+.icon-cog:before {
+    content: "\e613";
+}
+
+.icon-details:before {
+    content: "\e614";
+}
+
+.icon-diploma:before {
+    content: "\e615";
+}
+
+.icon-download:before {
+    content: "\e616";
+}
+
+.icon-edit:before {
+    content: "\e617";
+}
+
+.icon-employee:before {
+    content: "\e618";
+}
+
+.icon-group:before {
+    content: "\e619";
+}
+
+.icon-graduate:before {
+    content: "\e61a";
+}
+
+.icon-history:before {
+    content: "\e61b";
+}
+
+.icon-home:before {
+    content: "\e61c";
+}
+
+.icon-info:before {
+    content: "\e61d";
+}
+
+.icon-location:before {
+    content: "\e61e";
+}
+
+.icon-mail:before {
+    content: "\e61f";
+}
+
+.icon-map:before {
+    content: "\e620";
+}
+
+.icon-menu:before {
+    content: "\e621";
+}
+
+.icon-menu-thin:before {
+    content: "\e622";
+}
+
+.icon-missionaries:before {
+    content: "\e623";
+}
+
+.icon-overview:before {
+    content: "\e624";
+}
+
+.icon-phone:before {
+    content: "\e625";
+}
+
+.icon-plus:before {
+    content: "\e626";
+}
+
+.icon-print:before {
+    content: "\e627";
+}
+
+.icon-report:before {
+    content: "\e628";
+}
+
+.icon-retention:before {
+    content: "\e629";
+}
+
+.icon-risk:before {
+    content: "\e62a";
+}
+
+.icon-search:before {
+    content: "\e62b";
+}
+
+.icon-sortDown:before {
+    content: "\e62c";
+}
+
+.icon-sortUp:before {
+    content: "\e62d";
+}
+
+.icon-student:before {
+    content: "\e62e";
+}
+
+.icon-studentID:before {
+    content: "\e62f";
+}
+
+.icon-students:before {
+    content: "\e630";
+}
+
+.icon-versionL:before {
+    content: "\e631";
+}
+
+.icon-versionS:before {
+    content: "\e632";
+}
+
+.icon-xPlain:before {
+    content: "\e633";
+}
+
+.icon-xCircle:before {
+    content: "\e634";
+}
+
+.icon-circleOpen:before {
+    content: "\e635";
+}
+
+.icon-circleFull:before {
+    content: "\e636";
+}
+
+.icon-circleTime:before {
+    content: "\e63a" !important;
+    color: inherit !important;
+    display: inline-block;
+    margin-top: -1px;
+    vertical-align: middle;
+}
+
+
+.icon-check-clear:before {
+    content: "\e60d";
+    color: white;
+}
+
+.icon-speaker:before {
+    content: "\e63b";
+}
+.icon-speaker-clear:before {
+    content: "\e63b";
+     color: white;
+}
+
+.icon-sound:before {
+    content: "\e63c";
+}
+
+
+
+.icon-unsynced:before {
+    content: "\e903";
+}
+
+.icon-synced:before {
+    content: "\e904";
+}

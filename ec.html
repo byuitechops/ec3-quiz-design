@@ -1,0 +1,387 @@
+<html class=""><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><script type="text/javascript">
+    window.LDS = { track: {} };
+</script>
+
+
+
+<link href="./langEval.css" rel="stylesheet" type="text/css">
+<link href="./icons.css" rel="stylesheet" type="text/css">
+    <link href="./new_style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+
+
+
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+
+    .myCloak {
+        display: none !important;
+    }
+
+    .fancybox-inner {
+        overflow: auto !important;
+    }
+</style>
+
+
+    <meta name="google" value="notranslate">
+
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+
+<body ng-app="ngSiApp" class="ng-scope">
+
+
+    <div ng-controller="ctrlLanguageTest" ng-init="myinit(36,0,1, 0);" style="padding-bottom: 35px;" class="ng-scope">
+        <!-- ngIf: visible --><div data-ng-if="visible" class="ng-scope">
+            <header id="pathHead">
+                <section id="branding">
+                    <img src="/Content/images/churchLogo.svg" height="48px">
+                    <span style="float:right;"><span class="icon-user"></span><span class="userName">Andrew</span></span>
+                </section>
+
+                <section id="menuHead">
+                    <span class="menuHome">Language Assessment</span>
+                </section>
+            </header>
+
+            <div ng-show="Loading" style="padding: 10px; border: 1px solid black; background-color: white; position: fixed; top: 50%; left: 50%; -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); " class="ng-hide">
+                <img src="/Content/images/ajax-loader2.gif" alt="Loading"> Loading...
+            </div>
+            <div class="ng-hide" ng-show="SessionDied" style="padding: 20px; border: 1px solid black; background-color: white; position: fixed; top: 50%; left: 50%; -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); ">
+                Your session has ended. Please reload the page to continue.
+            </div>
+
+
+            <!--Here is the cheat sheet stuff  -->
+
+            <div ng-show="MainMenu &amp;&amp; !AutoStart" class="ng-hide">
+                <h1>Assessment Modules</h1>
+                <div class="instruction">
+                    <div class="instruction-text">
+                        <h3>Instructions</h3>
+
+                        <h4 style="font-weight: 600;">See the instructions in <a class="fancybox" href="https://www.pathwaysupport.org/lang/intro.html">Español</a> or <a class="fancybox" href="https://www.pathwaysupport.org/lang/intro-pt.html">Português</a>.</h4>
+
+                        <p>Finish the following modules to complete the English Language Assessment. You must complete the evaluation on your own. You may not ask for help, use a dictionary, phone, website, or any other resource to help you during the evaluation.</p>
+                        <p>If your connection is interrupted, or if you do not finish the evaluation your responses will be saved, once you complete a module however you cannot retake it.</p>
+
+                        <p>Complete the modules in the following order and read the instructions for each module and review the sample question.</p>
+                        <p>
+                            <span class="bold">IMPORTANT:</span> The modules for
+                            <span class="bold">Sentence Division and Editing</span> and
+                            <span class="bold">Writing</span> require a keyboard. The
+                            <span class="bold">Speaking</span> module requires a microphone.
+                        </p>
+
+                    </div>
+                </div>
+                <ul class="menu-ul">
+                    <!-- ngRepeat: module in Test.Modules | orderBy:'OrderNum' --><li ng-repeat="module in Test.Modules | orderBy:'OrderNum'" ng-click="LoadModule(module)" class="menuItem ng-scope" ng-class="{ 'selected': module.Answers.length > 0 &amp;&amp; !module.Completed &amp;&amp; !module.Waived}">
+                        <span class="option icon-check-clear" ng-class="{ 'selected': module.Completed || module.Waived  || (  module.Answers.length > 0 &amp;&amp; !module.Completed),  'icon-check': module.Completed || module.Waived, 'icon-circleTime': module.Answers.length > 0 &amp;&amp; (!module.Completed &amp;&amp; !module.Waived) ,  'icon-check-clear': !module.Completed &amp;&amp; !module.Waived}"></span>
+                        <div class="info">
+                            <span class="content ng-binding" style="font-weight: 700;">Listening</span>
+                            <span ng-show="module.Completed" class="ng-binding ng-hide"> - Completed on </span>
+                            <span ng-show="module.Answers.length > 0 &amp;&amp; !module.Completed &amp;&amp; !module.Waived " class="ng-hide"> - in process</span>
+                            <span ng-show="module.Waived " class="ng-hide"> - Waived</span>
+                            <span ng-show="!module.Completed &amp;&amp; !(module.Answers.length > 0 &amp;&amp; !module.Completed)" class="ng-binding"> - Max 20 minutes</span>
+                        </div>
+                    </li><!-- end ngRepeat: module in Test.Modules | orderBy:'OrderNum' -->
+                </ul>
+                <div class="centerContent">
+                    <p><span ng-show="Test.Completed" class="ng-hide">You have completed all the required tests.  </span><a href="/Home/ReturnHome">Return to Pathway</a></p>
+                </div>
+            </div>
+            <div ng-show="AutoStart &amp;&amp; Test.Completed" class="centerContent ng-hide">
+                <p style="text-align: center;"><span ng-show="Test.Completed" class="ng-hide">You have finished.  </span><a href="#" ng-click="ResolveEnding('')">Go Back</a></p>
+            </div>
+
+
+            <div ng-switch="ShowInstructions &amp;&amp; !MainMenu &amp;&amp; !CurrentScreen.Summary">
+                <!-- ngSwitchWhen: true -->
+            </div>
+            <div ng-switch="CurrentScreen.Summary &amp;&amp; !MainMenu">
+                <!-- ngSwitchWhen: true -->
+            </div>
+
+            <div class="centerContent" ng-show="!ShowInstructions &amp;&amp; !MainMenu &amp;&amp; !HideQuestions &amp;&amp; !CurrentScreen.Summary &amp;&amp; Test.TestType == 3 &amp;&amp; (CurrentQuestion.Type != 2 &amp;&amp; CurrentQuestion.Type != 4)">
+                <div style="border: 1px solid black; display:table; width: 100%;">
+                    <div style="float:left; padding: 10px 2px 10px 10px;">
+                        <p style="margin: 0; padding: 0; text-align: center">
+                            Current Status
+                        </p>
+                        <p style="margin: 0; padding: 0;" class="ng-binding">
+                            Intermediate Correct: 0 of 0 <span class="bold ng-binding">%</span>
+                        </p>
+                        <p style="margin: 0; padding: 0;" class="ng-binding">
+                            Advanced Correct: 0 of 0 <span class="bold ng-binding">0.00%</span>
+                        </p>
+                    </div>
+                    <div style="float:right; padding: 10px 10px 10px 2px;">
+                        <p style="margin: 0; padding: 0; text-align: center">
+                            Overall Status
+                        </p>
+                        <p style="margin: 0; padding: 0;" class="ng-binding">
+                            Intermediate Correct: 0 of 60 <span class="bold ng-binding">0.00%</span>
+                        </p>
+                        <p style="margin: 0; padding: 0;" class="ng-binding">
+                            Advanced Correct: 0 of 15 <span class="bold ng-binding">0.00%</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test centerContent" ng-show="!ShowInstructions &amp;&amp; !MainMenu &amp;&amp; !HideQuestions &amp;&amp; !CurrentScreen.Summary">
+                <div>
+                    <div style="margin-top: 18px;">
+                        <div ng-show="CurrentModuleScoreType == 2" class="questionCounter ng-binding">
+                            Question 1 of 75
+                        </div>
+                        <div ng-show="(CurrentQuestion.Limit > 0 &amp;&amp; CurrentQuestion.ShowAnswers) &amp;&amp; CurrentModuleTiming" class="timer ng-binding ng-hide">
+                            00:00:00
+                        </div>
+                        <div ng-show="CurrentQuestion.Group" class="">
+                            <div class="questionText paddingBottom ng-binding" style="margin: 0;" ng-bind-html="CurrentQuestion.Group.PassageText | html"><h1>Instructions</h1>
+<p>This passage will help you master Asking and Answering Questions. Do the Warm-up first. Then listen to the recording below and answer the practice questions.</p>
+<h2>Warm-up</h2>
+<p>Look at the picture below and think about the questions.</p>
+<p><img src="./01_Tired.jpg"></p>
+<p>Doctors say adults should get between 7 and 9 hours of sleep. How many hours do you sleep at night? Do you need to sleep more or less?</p>
+<p class="subhead">Review these vocabulary words before listening. They will help you understand the conversation.</p>
+                                <div class="aside">
+<p><strong>class (n):</strong> a place where students and a teacher meet</p>
+<p><strong>example:</strong> <em>There is a test in class today. </em></p>
+<p><strong>science (n):</strong> a subject that students learn about (e.g. biology, physics, chemistry)</p>
+<p><strong>example:</strong><em> I read a science book to learn about nature. </em></p>
+<p><strong>tired (adj):</strong> sleepy</p>
+<p><strong>example:</strong> <em>I feel tired when I run around the park.</em></p>
+                                    </div>
+<h2>Passage</h2>
+<p>Teuila and Jamie talk after class. They talk about how Sarah is very tired.</p>
+<p><img src="./02_FemaleStudentsTalking.jpg"></p>
+<p><audio src="./FP_L1_AS_T1_P1.mp3" controls="controls"></audio></p>
+                                <div class="aside">
+<p><strong>Teuila:</strong> That lesson in class today was interesting. I love science!</p>
+<p><strong>Sarah:</strong> Yeah.</p>
+<p><strong>Teuila:</strong> The teacher is funny too. Everyone laughed at his jokes. But you did not laugh. I saw you. You looked tired!</p>
+<p><strong>Sarah:</strong> Yeah, I'm so tired today. I'm tired all the time!</p>
+<p><strong>Teuila:</strong> Do you sleep enough at night?</p>
+<p><strong>Sarah:</strong> Maybe not.</p>
+<p><strong>Teuila:</strong> What time do you go to bed?</p>
+<p><strong>Sarah:</strong> I study at the library until it closes at 11. Then my roommate and I talk. I go to sleep at 1 a.m.</p>
+<p><strong>Teuila:</strong> What time do you wake up?</p>
+<p><strong>Sarah:</strong> I wake up at 6 a.m.</p>
+<p><strong> Teuila:</strong> That is very early!</p>
+<p><strong>Sarah:</strong> I know... I go to the gym before class.</p>
+<p><strong>Teuila:</strong> Sleep is important. I get lots of sleep. My body feels good. My mind feels good. School is easier. I feel happy!</p>
+<p><strong>Sarah:</strong> That's good! Tonight I will sleep for seven hours. I will not fall asleep in class tomorrow. I will laugh at the science teacher's jokes too!</p>
+<p><strong>Teuila:</strong> Sounds good! See you tomorrow.</p></div>
+</div>
+
+
+                            <img style="width: 100%;" ng-show="CurrentQuestion.Group.Passage.ResourceUri &amp;&amp; CurrentQuestion.Group.Passage.TypeId == 2" class="ng-hide">
+                            <div ng-show="CurrentQuestion.Audio" class="ng-hide">
+                                <div class="button active ng-hide" ng-class="{active: !CurrentQuestion.SoundPlaying}" ng-show="!CurrentQuestion.ShowAnswers" ng-click="PlayAudioQuestion(CurrentQuestion)" style="float: left;">
+                                    <span class="option icon-speaker-clear" ng-class="{ 'icon-speaker': CurrentQuestion.SoundPlaying, 'icon-speaker-clear': !CurrentQuestion.SoundPlaying}"></span>
+                                    Listen
+                                </div>
+                                <p ng-show="CurrentQuestion.SoundPlaying" style="float: left; margin: 20px 0 0 0;" class="ng-hide"> Sound is playing ....</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="answers" style="clear:both;" ng-show="CurrentQuestion.ShowAnswers || Special" class="">
+                        <div ng-show="CurrentQuestion.Audio" class="ng-hide">
+                            Mark the choice that answers the question.
+                        </div>
+                        <div ng-show="!CurrentQuestion.Audio">
+                            <h3 ng-bind-html="CurrentQuestion.Text | html" class="ng-binding">What is wrong with Sarah?
+She is ________.
+</h3>
+                            <img style="width: 100%;" ng-show="CurrentQuestion.Attachment &amp;&amp; CurrentQuestion.Attachment.TypeId == 2" class="ng-hide">
+                        </div>
+
+                        <div ng-show="CurrentQuestion.Record" style="min-height: 6em;" class="ng-hide">
+                            <div class="button active" ng-class="{active : !CurrentQuestion.IsEncoding &amp;&amp; !(Test.TestType != 3 &amp;&amp; CurrentQuestion.RecordingBlobUrl)}" ng-show="CurrentQuestion.ShowAnswers" ng-disabled="CurrentQuestion.IsEncoding || (Test.TestType != 3 &amp;&amp; CurrentQuestion.RecordingBlobUrl)" ng-click="Recorder.Toggle(CurrentQuestion)" style="width:4em; text-align:center;">
+
+                                <span class="ng-binding">Record</span>
+                            </div>
+                            <div id="viz" class="col-md-9" style="margin: 2em 0;">
+                                <div ng-show="CurrentQuestion.IsRecording &amp;&amp; !CurrentQuestion.IsEncoding" style="width: 12em; height:1em; outline: 1px solid silver; transition-duration: .1s; transition-property: width;" class="ng-hide">
+                                    <div id="volBar" style="height:100%; width:0%; transition:inherit; background:linear-gradient(to right, #c00 0,#9f0 1em,#2c0 9em);"></div>
+                                </div>
+                                <audio id="RecordingPreview" ng-show="CurrentQuestion.RecordingBlobUrl" controls="" class="ng-hide">
+                            </audio></div>
+                        </div>
+
+                        <ul class="answer-ul">
+                            <!-- ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 2 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 2 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 2 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 2 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 2 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' -->
+                            <!-- ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 3 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 3 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 3 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 3 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' --><!-- ngIf: CurrentQuestion.Type == 3 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' -->
+                            <!-- ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy --><!-- ngIf: CurrentQuestion.Type == 1 --><li ng-if="CurrentQuestion.Type == 1" class="answer ng-scope" ng-repeat="answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy" ng-class="{selected: FoundAnswer(answer.AnswerId), wrong: IsWrong(answer), correct: IsCorrect(answer)}" ng-click="AnswerIt(CurrentQuestion.QuestionId,answer.AnswerId);">
+                                <span class="option ng-binding" answerid="8353" ng-class="{dontknow: answer.DontKnow, selected: FoundAnswer(answer.AnswerId) }">A</span>
+                                <p>
+
+                                    </p><div ng-bind-html="answer.Text | html" ng-show="!answer.Attachment" class="ng-binding">worried</div>
+                                    <img style="width: 100%;" ng-show="answer.Attachment &amp;&amp; answer.Attachment.TypeId == 2" class="ng-hide">
+                                    <div style="margin: 10px 0px;" ng-show="answer.Attachment &amp;&amp; (answer.Attachment.TypeId == 1 || answer.Attachment.TypeId == 3)" class="button active ng-hide" ng-click="PlaySound(answer.Attachment.ResourceUri)">
+                                        <span ng-class="{ 'icon-speaker': CurrentQuestion.SoundPlaying, 'icon-speaker-clear': !CurrentQuestion.SoundPlaying}" class="icon-speaker-clear"></span>
+                                        Listen
+                                    </div>
+
+
+                                <p></p>
+                            </li><!-- end ngIf: CurrentQuestion.Type == 1 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy --><!-- ngIf: CurrentQuestion.Type == 1 --><li ng-if="CurrentQuestion.Type == 1" class="answer ng-scope" ng-repeat="answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy" ng-class="{selected: FoundAnswer(answer.AnswerId), wrong: IsWrong(answer), correct: IsCorrect(answer)}" ng-click="AnswerIt(CurrentQuestion.QuestionId,answer.AnswerId);">
+                                <span class="option ng-binding" answerid="8352" ng-class="{dontknow: answer.DontKnow, selected: FoundAnswer(answer.AnswerId) }">B</span>
+                                <p>
+
+                                    </p><div ng-bind-html="answer.Text | html" ng-show="!answer.Attachment" class="ng-binding">sick</div>
+                                    <img style="width: 100%;" ng-show="answer.Attachment &amp;&amp; answer.Attachment.TypeId == 2" class="ng-hide">
+                                    <div style="margin: 10px 0px;" ng-show="answer.Attachment &amp;&amp; (answer.Attachment.TypeId == 1 || answer.Attachment.TypeId == 3)" class="button active ng-hide" ng-click="PlaySound(answer.Attachment.ResourceUri)">
+                                        <span ng-class="{ 'icon-speaker': CurrentQuestion.SoundPlaying, 'icon-speaker-clear': !CurrentQuestion.SoundPlaying}" class="icon-speaker-clear"></span>
+                                        Listen
+                                    </div>
+
+
+                                <p></p>
+                            </li><!-- end ngIf: CurrentQuestion.Type == 1 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy --><!-- ngIf: CurrentQuestion.Type == 1 --><li ng-if="CurrentQuestion.Type == 1" class="answer ng-scope" ng-repeat="answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy" ng-class="{selected: FoundAnswer(answer.AnswerId), wrong: IsWrong(answer), correct: IsCorrect(answer)}" ng-click="AnswerIt(CurrentQuestion.QuestionId,answer.AnswerId);">
+                                <span class="option ng-binding" answerid="8354" ng-class="{dontknow: answer.DontKnow, selected: FoundAnswer(answer.AnswerId) }">C</span>
+                                <p>
+
+                                    </p><div ng-bind-html="answer.Text | html" ng-show="!answer.Attachment" class="ng-binding">going to the gym</div>
+                                    <img style="width: 100%;" ng-show="answer.Attachment &amp;&amp; answer.Attachment.TypeId == 2" class="ng-hide">
+                                    <div style="margin: 10px 0px;" ng-show="answer.Attachment &amp;&amp; (answer.Attachment.TypeId == 1 || answer.Attachment.TypeId == 3)" class="button active ng-hide" ng-click="PlaySound(answer.Attachment.ResourceUri)">
+                                        <span ng-class="{ 'icon-speaker': CurrentQuestion.SoundPlaying, 'icon-speaker-clear': !CurrentQuestion.SoundPlaying}" class="icon-speaker-clear"></span>
+                                        Listen
+                                    </div>
+
+
+                                <p></p>
+                            </li><!-- end ngIf: CurrentQuestion.Type == 1 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy --><!-- ngIf: CurrentQuestion.Type == 1 --><li ng-if="CurrentQuestion.Type == 1" class="answer ng-scope" ng-repeat="answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy" ng-class="{selected: FoundAnswer(answer.AnswerId), wrong: IsWrong(answer), correct: IsCorrect(answer)}" ng-click="AnswerIt(CurrentQuestion.QuestionId,answer.AnswerId);">
+                                <span class="option ng-binding" answerid="8355" ng-class="{dontknow: answer.DontKnow, selected: FoundAnswer(answer.AnswerId) }">D</span>
+                                <p>
+
+                                    </p><div ng-bind-html="answer.Text | html" ng-show="!answer.Attachment" class="ng-binding">tired</div>
+                                    <img style="width: 100%;" ng-show="answer.Attachment &amp;&amp; answer.Attachment.TypeId == 2" class="ng-hide">
+                                    <div style="margin: 10px 0px;" ng-show="answer.Attachment &amp;&amp; (answer.Attachment.TypeId == 1 || answer.Attachment.TypeId == 3)" class="button active ng-hide" ng-click="PlaySound(answer.Attachment.ResourceUri)">
+                                        <span ng-class="{ 'icon-speaker': CurrentQuestion.SoundPlaying, 'icon-speaker-clear': !CurrentQuestion.SoundPlaying}" class="icon-speaker-clear"></span>
+                                        Listen
+                                    </div>
+
+
+                                <p></p>
+                            </li><!-- end ngIf: CurrentQuestion.Type == 1 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy --><!-- ngIf: CurrentQuestion.Type == 1 --><li ng-if="CurrentQuestion.Type == 1" class="answer ng-scope" ng-repeat="answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy" ng-class="{selected: FoundAnswer(answer.AnswerId), wrong: IsWrong(answer), correct: IsCorrect(answer)}" ng-click="AnswerIt(CurrentQuestion.QuestionId,answer.AnswerId);">
+                                <span class="option ng-binding dontknow" answerid="1" ng-class="{dontknow: answer.DontKnow, selected: FoundAnswer(answer.AnswerId) }">E</span>
+                                <p>
+
+                                    </p><div ng-bind-html="answer.Text | html" ng-show="!answer.Attachment" class="ng-binding">I don't know</div>
+                                    <img style="width: 100%;" ng-show="answer.Attachment &amp;&amp; answer.Attachment.TypeId == 2" class="ng-hide">
+                                    <div style="margin: 10px 0px;" ng-show="answer.Attachment &amp;&amp; (answer.Attachment.TypeId == 1 || answer.Attachment.TypeId == 3)" class="button active ng-hide" ng-click="PlaySound(answer.Attachment.ResourceUri)">
+                                        <span ng-class="{ 'icon-speaker': CurrentQuestion.SoundPlaying, 'icon-speaker-clear': !CurrentQuestion.SoundPlaying}" class="icon-speaker-clear"></span>
+                                        Listen
+                                    </div>
+
+
+                                <p></p>
+                            </li><!-- end ngIf: CurrentQuestion.Type == 1 --><!-- end ngRepeat: answer in CurrentQuestion.Answers  | orderBy:'Rank' | letterfy -->
+                        </ul>
+                    </div>
+
+                <div style="clear:both;">
+                    <button class="button" ng-click="ScoreIt()" ng-hide="CurrentQuestionInReview" ng-disabled="SubmitDisabled()" ng-class="{active: !SubmitDisabled()}" disabled="disabled">Submit Answer</button>
+                    <button ng-click="DoneReviewing()" ng-show="CurrentQuestionInReview" class="button active ng-hide">Continue</button> <span ng-show="CurrentQuestionInReview" class="ng-binding ng-hide">Incorrect</span>
+                </div>
+            </div>
+        </div>
+    </div><!-- end ngIf: visible -->
+</div>
+
+
+
+
+
+<script src="/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="/Scripts/angular-1.5.6.min.js"></script>
+<script src="/Scripts/angular-sanitize.min.js"></script>
+<script src="/Scripts/AngularDirectives.js"></script>
+<script src="/Scripts/AngularAppUtils.js"></script>
+<script src="/Scripts/AngularScopeExtensions.js"></script>
+<script src="/Scripts/AngularServices.js"></script>
+<script type="text/javascript" src="/scripts/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+
+
+
+<script src="/Scripts/NewLangEval?v=BGiu3QJRvFgmpELuqMldr0qC84k00xF51-hodJE88i41"></script>
+
+<script type="text/javascript">
+    document.body.oncopy = function () { return false; }
+    document.body.oncut = function () { return false; }
+    document.body.onpaste = function () { return false; }
+    document.body.oncontextmenu = function () { return false; }
+
+    $(function () {
+        $('.fancybox').fancybox({ type: 'iframe' });
+        document.addEventListener("selectstart", function (e) {
+            try {
+
+                if ((e.target.tagName == "INPUT") ||
+                    (e.target.tagName == "TEXTAREA") ||
+                    (e.target.hasClass("userselection"))) {
+                    return true;
+                }
+            }
+            catch (err) {
+
+            }
+            return false;
+        });
+
+        $(".focusme").keyup(function (e) {
+            if (e.keyCode == 13) {
+                // Do something
+            }
+        });
+    });
+
+    var WireUpChart = function (ctx, dataIn) {
+
+        var chartsToWire = $('.chart');
+        $.each(chartsToWire, function (index, value) {
+            debugger;
+            var stringdata = $(value).attr("id");
+            var data = stringdata.split("-");
+            data.splice(0, 1);
+
+            var myData2 = {
+                labels: ["Wrong", "Correct"],
+                datasets: [{
+                    label: '# of Questions',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 0.5)',
+                        'rgba(0, 174, 0, 0.5)'
+                    ],
+                }]
+            };
+
+            var myChart2 = new Chart($(value), {
+                type: 'pie',
+                data: myData2,
+                options: {
+                    animation: {
+                        animateScale: true
+                    }
+                }
+
+            });
+
+        });
+
+
+    }
+
+</script>
+
+</body></html>
