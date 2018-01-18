@@ -1,0 +1,70 @@
+* {
+    font-family: "Open Sans";
+}
+h1 {
+    font-size: 36pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+    margin-left: 0px;
+    padding-top: 24px;
+    padding-bottom: 9px;
+}
+h2 {
+    overflow: hidden;
+    font-size: 28pt;
+    line-height: 28pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: #df4661;
+    margin-left: 0px;
+    padding-top: 24px;
+    padding-bottom: 9px;
+    position: relative;
+    display: inline-block;
+}
+p {
+    font-size: 12pt;
+    color: black;
+    margin-left: 15px;
+    line-height: 15pt;
+}
+.aside,
+.subhead {
+    font-size: 11pt;
+    margin-left: 25px;
+}
+.subhead {
+    font-weight: bold;
+    color: #df4661;
+    padding-right: 8px;
+    margin-left: 25px;
+    font-size: 11pt;
+    color: #df4661;
+}
+.question {
+    font-size: 10pt;
+    color: #5d5d5d;
+}
+h2::after {
+    position: absolute;
+    content: "";
+    border-top: 2px solid #df4661;
+    width: calc(100% - 30px);
+    margin-top: calc(14pt + 2px);
+    margin-left: 30px;
+}
+
+/********CUSTOM CLASSES**************/
+
+
+/*Wrap the "pink-wall" class around EVERYTHING after
+a header, until the next header. For instance, all
+of the content between "warm up" and "passage"*/
+.pink-wall {
+    border-left: 2px solid #df4661;
+    box-sizing: border-box;
+    margin-left: 5px;
+}

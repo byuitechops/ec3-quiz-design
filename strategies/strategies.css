@@ -1,0 +1,69 @@
+/*PAGE SETUP*/
+* {
+    font-family: "Open Sans";
+}
+body{margin:0;}
+.main{width:800px; margin:0 auto;}
+
+/********CUSTOM CLASSES*************/
+.green{background-color:#82C242;}
+.dark-blue{background-color:#015E82;}
+.text-dark-blue{color:#015E82;}
+.blue{background-color:#1D9CD4;}
+.pink{background-color:#df4661;}
+.text-pink{color:#df4661;}
+.light-grey{background-color:#d5d5d5;}
+
+.light-blue{background-color:#ddf3fb;}
+
+.light-pink{background-color:#f8dadf;}
+.light-green{background-color:#eff7e7;}
+
+.callout{
+padding-top:35px; margin-top:-50px;  padding-left:25px; padding-right:25px; margin-left:15px; padding-bottom:15px;
+}
+
+.callout ul{list-style-type:square;}
+.callout ul li{font-style:italic;}
+.callout p {margin:0;}
+
+.aside{margin-left:35px;margin-top:10px;color:#444}
+.aside strong{color:black;}
+
+.bold{font-weight:bold;}
+.indent{padding-left:15px;}
+
+.banner{color:white;margin-top:50px;color:;}
+.banner h1{margin:0;padding-top:10px; font-size: 30pt;}
+.banner h2{margin:0;padding-bottom:10px;font-weight:normal;}
+.banner-sub{margin-top:0;font-size:14pt;}
+
+.flag{display:inline-block; padding:0px 10px; font-size:24pt;height:40px;}
+.green-flag::after{
+    position:absolute;
+    content: "";
+    float: left;
+    border: 20px solid #82C242;
+    border-right-color: transparent;}
+.blue-flag::after{
+    position:absolute;
+    content: "";
+    float: left;
+    border: 20px solid #1D9CD4;
+    border-right-color: transparent;}
+.pink-flag::after{
+    position:absolute;
+    content: "";
+    float: left;
+    border: 20px solid #df4661;
+    border-right-color: transparent;}
+.grey-flag::after{
+    position:absolute;
+    content: "";
+    float: left;
+    border: 20px solid #5d5d5d;
+    border-right-color: transparent;}
+
+h2{color:white;}
+h3{margin:0; margin-top:15px;}
+h4{margin:0px;font-weight:normal;font-size:16pt}
