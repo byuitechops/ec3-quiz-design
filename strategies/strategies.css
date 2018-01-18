@@ -38,29 +38,29 @@ padding-top:35px; margin-top:-50px;  padding-left:25px; padding-right:25px; marg
 .banner h2{margin:0;padding-bottom:10px;font-weight:normal;}
 .banner-sub{margin-top:0;font-size:14pt;}
 
-.flag{display:inline-block; padding:0px 10px; font-size:24pt;height:40px;}
+.flag{display:inline-block; padding:0px 10px; width:calc(50% - 20px); font-size:24pt;height:40px;}
 .green-flag::after{
     position:absolute;
     content: "";
-    float: left;
+    left:50%;
     border: 20px solid #82C242;
     border-right-color: transparent;}
 .blue-flag::after{
     position:absolute;
     content: "";
-    float: left;
+    left:50%;
     border: 20px solid #1D9CD4;
     border-right-color: transparent;}
 .pink-flag::after{
     position:absolute;
     content: "";
-    float: left;
+    left:50%;
     border: 20px solid #df4661;
     border-right-color: transparent;}
 .grey-flag::after{
     position:absolute;
     content: "";
-    float: left;
+    left:50%;
     border: 20px solid #5d5d5d;
     border-right-color: transparent;}
 
