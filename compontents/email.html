@@ -4,21 +4,21 @@
 <style>
 .container{width:800px;margin:0 auto;}
     .message{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px;}
-    .message--header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
-    .message--header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
-    .message--header h3,h4{margin:0; font-family:'Open Sans';}
-    .message--header h4{font-weight:normal;}
-    .message--body{padding:15px 0px 0px 30px; font-family:'Open Sans'}
+    .message-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
+    .message-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
+    .message-header h3,h4{margin:0; font-family:'Open Sans';}
+    .message-header h4{font-weight:normal;}
+    .message-body{padding:15px 0px 0px 30px; font-family:'Open Sans'}
 </style>
 </head>
  <body>
 <div class="container">
     <div class="message">
-        <div class="message--header" data-initials="JD">
+        <div class="message-header" data-initials="JD">
             <h3>John Doe</h3>
             <h4>jondoe234@byui.edu</h4>
         </div>
-        <div class="message--body">
+        <div class="message-body">
             <p>Hello Everyone,</p>
             <p>Winter break is almost here! Please read this email carefully. There are some important announcements and reminders in this email.</p>
             <p>1. We will have a cleaning check on Saturday, January 21st after the break. We will send another email about this soon. The next email will have more information about the cleaning check.</p>

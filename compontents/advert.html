@@ -3,28 +3,30 @@
 <head>
 <style>
 .container{width:800px;margin:0 auto;}
-    .advert{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;}
-    .advert--header{position:relative; display:flex; align-items:center;padding:10px 0px;}
-    .advert--header img{padding-right:10px;}
-    .advert--header::before{}/*ASSUMING A NEVER-CHANGING AD ICON*/
-    .advert--header h3,h4{margin:0; font-family:'Open Sans'; font-weight:normal;}
-    .advert--header h4{color:#bcbcbc;}
-    .advert--body{ font-family:'Open Sans'}
-    .advert--body img{width:100%;}
-    .advert--body p:last-child{color:#df4661; font-weight:bold;}
+    .advert{border-bottom:3px solid #bcbcbc;}
+    .advert > p {border-bottom:3px solid #bcbcbc;font-family:'Open Sans'; width:100%;margin:0;}
+    .advert-header{position:relative; display:flex; align-items:center;padding:10px 0px;}
+    .advert-header img{padding-right:10px; }
+    .advert-header::before{}/*ASSUMING A NEVER-CHANGING AD ICON*/
+    .advert-header h3,h4{margin:0; font-family:'Open Sans'; font-weight:normal;font-size:13pt;}
+    .advert-header h4{color:#bcbcbc; font-size:9pt;}
+    .advert-body{ font-family:'Open Sans'; font-size:11pt; }
+    .advert-body img{width:100%;}
+    .advert-declaration{color:#df4661; font-weight:bold; font-size:13pt;}
 </style>
 </head>
  <body>
 <div class="container">
     <div class="advert">
-        <div class="advert--header">
+        <p>AD</p>
+        <div class="advert-header">
             <img src="http://via.placeholder.com/50x50">
             <div>
                 <h3>Farmers Market</h3>
                 <h4>Sponsored</h4>
             </div>
         </div>
-        <div class="advert--body">
+        <div class="advert-body">
             <p>
                 Join us for the summer farmers market. It’s this Friday, Saturday and Sunday from 8am to 2pm in Queen’s Park! We have many fruits and vegetables! Our farmers grow the food close by. They grow the best fruits and vegetables. We have delicious apples and sweet oranges. You’ll find the best prices here too. Give your family healthy foods. Buy fresh, local vegetables.
             </p>
@@ -32,7 +34,7 @@
             <p>Also, taste the best homemade bread and cheese. Homemade food is healthy for you. Take some home to a friend! You can sit at the tables and listen to good music.</p>
             <p>Also stop by our artists’ tables. See art made by local artists. There are many styles to see. You’ll find something perfect for your home.</p>
             <p>Bring children to the information center for a free ball.</p>
-            <p>See you Friday, Saturday, and Sunday at the Queen’s Park farmers market!</p>
+            <p class="advert-declaration">See you Friday, Saturday, and Sunday at the Queen’s Park farmers market!</p>
         </div>
     </div>
 

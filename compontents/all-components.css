@@ -1,61 +1,42 @@
-/*EMAILS*/
-    .message{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px;}
-    .message--header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
-    .message--header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
-    .message--header h3,h4{margin:0; font-family:'Open Sans';}
-    .message--header h4{font-weight:normal;}
-    .message--body{padding:15px 0px 0px 30px; font-family:'Open Sans'}
 /*CHAT BUBBLES*/
-.bubble {
-        padding: 30px;
-        color: white;
-        font-size: 13pt;
-        border-radius: 15px;
-        font-family: sans-serif;
-        position: relative;
-        margin-bottom: 25px;
-        max-width: 80%;
-        display: flex;
-        align-items: center;
-    }
-    .bubble::after {
-        content: attr(data-name);
-        position: absolute;
-        bottom: 0;
-        right: 15px;
-        font-size: 16pt;
-    }
-    .bubble img {
-        margin-right: 30px;
-    }
-    .bubble p {
-        margin-right: 30px;
-    }
-    .bubble--1::before {
-        border-top: 10px solid #df4661;
-        border-bottom: 10px solid transparent;
-        border-left: 20px solid #df4661;
-        border-right: 20px solid transparent;
-        position: absolute;
-        content: "";
-        bottom: -20px;
-        left: 15px;
-    }
-    .bubble--2::before {
-        border-top: 10px solid #3bbdac;
-        border-bottom: 10px solid transparent;
-        border-right: 20px solid #3bbdac;
-        border-left: 20px solid transparent;
-        position: absolute;
-        content: "";
-        bottom: -20px;
-        right: 15px;
-    }
-    .bubble--1 {
-        background-color: #df4661;
-        float: left;
-    }
-    .bubble--2 {
-        background-color: #3bbdac;
-        float: right;
-    }
+    .chat{padding:15px; color: white; font-size:13pt; border-radius: 15px; font-family:sans-serif;position:relative;margin-bottom:25px; max-width:80%;display:flex; align-items:center;clear:both;}
+    .chat::after{content:attr(data-name); position:absolute;bottom:0; right:15px; font-size:13pt;}
+    .chat img{margin-right:15px;}
+    .chat p{margin-right:15px; font-size:10pt;}
+    .chat--1::before{border-top:10px solid #df4661;border-bottom:10px solid #3bbdac; border-left:20px solid #df4661; border-right:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; left:15px; border-bottom- color:transparent;border-right-color:transparent;}
+    .chat--2::before{border-top:10px solid #3bbdac;border-bottom:10px solid #3bbdac; border-right:20px solid #3bbdac; border-left:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; right:15px; border-bottom-    color:transparent;border-left-color:transparent;}
+    .chat--1{ background-color: #df4661;float:left;}
+    .chat--2{ background-color: #3bbdac;float:right;}
+/*EMAIL MESSAGES*/
+    .message{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px;}
+    .message-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
+    .message-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
+    .message-header h3,h4{margin:0; font-family:'Open Sans';}
+    .message-header h4{font-weight:normal;}
+    .message-body{padding:15px 0px 0px 30px; font-family:'Open Sans';}
+/*ADVERTS*/
+    .advert{border-bottom:3px solid #bcbcbc;}
+    .advert > p {border-bottom:3px solid #bcbcbc;font-family:'Open Sans'; width:100%;margin:0;}
+    .advert-header{position:relative; display:flex; align-items:center;padding:10px 0px;}
+    .advert-header img{padding-right:10px; }
+    .advert-header::before{}/*ASSUMING A NEVER-CHANGING AD ICON*/
+    .advert-header h3,h4{margin:0; font-family:'Open Sans'; font-weight:normal;font-size:13pt;}
+    .advert-header h4{color:#bcbcbc; font-size:9pt;}
+    .advert-body{ font-family:'Open Sans'; font-size:11pt; }
+    .advert-body img{width:100%;}
+    .advert-declaration{color:#df4661; font-weight:bold; font-size:13pt;}
+/*EXPLAINING/TELLING*/
+    .explain{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans'}
+    .explain-body .explain-block{font-size:12pt;}
+    .explain-body > p {font-size:11pt;}
+    .explain-item{position:relative; text-align:center; padding:24px 24px 0px 24px;}
+    .explain-item p{text-align:left; background:#5d5d5d; padding:2px 10px;color:white; margin:0;position:absolute;top:12px;left:0px;font-size:1.75vmin;line-height:20px;height:20px; width:85%;}
+    .explain-item p::after{border-top:12px solid #5d5d5d;border-bottom:12px solid #5d5d5d; border-right:12px solid transparent; border-left:12px solid #5d5d5d; position:absolute; content:"";right:-12px; top:0;}
+    .explain-item img{max-width:100%;}
+/*JOURNAL*/
+    .journal{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans'}
+    .journal-header{text-align:center;}
+    .journal-header p{text-align:left; font-size:12pt;}
+    .journal-header h3{color:white;background:#6d6d6d; font-size:22pt;padding:5px;margin:0;}
+    .journal-header h4{ margin:0;padding:5px;}
+    .journal-entry{padding-left:30px; font-size:11pt;color:#6d6d6d;}

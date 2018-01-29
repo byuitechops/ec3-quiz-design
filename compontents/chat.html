@@ -3,16 +3,14 @@
 <head>
 <style>
 .container{width:800px;margin:0 auto;}
-.bubble{padding:30px; color: white; font-size:13pt; border-radius: 15px; font-family:sans-serif;position:relative;margin-bottom:25px; max-width:80%;display:flex; align-items:center;clear:both;}
-.bubble::after{content:attr(data-name); position:absolute;bottom:0; right:15px; font-size:16pt;}
-.bubble img{margin-right:30px;}
-.bubble p{margin-right:30px;}
-.bubble--1::before{border-top:10px solid #df4661;border-bottom:10px solid #3bbdac; border-left:20px solid #df4661; border-right:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; left:15px; border-bottom-color:transparent;border-right-color:transparent;}
-
-.bubble--2::before{border-top:10px solid #3bbdac;border-bottom:10px solid #3bbdac; border-right:20px solid #3bbdac; border-left:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; right:15px; border-bottom-color:transparent;border-left-color:transparent;}
-
-.bubble--1{ background-color: #df4661;float:left;}
-.bubble--2{ background-color: #3bbdac;float:right;}
+.chat{padding:15px; color: white; font-size:13pt; border-radius: 15px; font-family:sans-serif;position:relative;margin-bottom:25px; max-width:80%;display:flex; align-items:center;clear:both;}
+.chat::after{content:attr(data-name); position:absolute;bottom:0; right:15px; font-size:13pt;}
+.chat img{margin-right:15px;}
+.chat p{margin-right:15px; font-size:10pt;}
+.chat--1::before{border-top:10px solid #df4661;border-bottom:10px solid #3bbdac; border-left:20px solid #df4661; border-right:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; left:15px; border-bottom-color:transparent;border-right-color:transparent;}
+.chat--2::before{border-top:10px solid #3bbdac;border-bottom:10px solid #3bbdac; border-right:20px solid #3bbdac; border-left:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; right:15px; border-bottom-color:transparent;border-left-color:transparent;}
+.chat--1{ background-color: #df4661;float:left;}
+.chat--2{ background-color: #3bbdac;float:right;}
 
 
 
@@ -23,14 +21,14 @@
 
 <body>
     <div class="container">
-    <div class="bubble bubble--1" data-name="Sarah">
+    <div class="chat chat--1" data-name="Sarah">
 <img src="http://via.placeholder.com/60x60"/>
 <p>
 That’s good! Tonight I will sleep for seven hours. I will not fall asleep
 in class tomorrow. I will laugh at the science teacher’s jokes too!</p>
 </div>
 
-<div class="bubble bubble--2" data-name="Teuila">
+<div class="chat chat--2" data-name="Teuila">
 <img src="http://via.placeholder.com/60x60"/>
 <p>
 Sounds good! See you tomorrow.</p>
