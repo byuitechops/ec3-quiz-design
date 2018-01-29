@@ -1,0 +1,61 @@
+/*EMAILS*/
+    .message{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px;}
+    .message--header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
+    .message--header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
+    .message--header h3,h4{margin:0; font-family:'Open Sans';}
+    .message--header h4{font-weight:normal;}
+    .message--body{padding:15px 0px 0px 30px; font-family:'Open Sans'}
+/*CHAT BUBBLES*/
+.bubble {
+        padding: 30px;
+        color: white;
+        font-size: 13pt;
+        border-radius: 15px;
+        font-family: sans-serif;
+        position: relative;
+        margin-bottom: 25px;
+        max-width: 80%;
+        display: flex;
+        align-items: center;
+    }
+    .bubble::after {
+        content: attr(data-name);
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        font-size: 16pt;
+    }
+    .bubble img {
+        margin-right: 30px;
+    }
+    .bubble p {
+        margin-right: 30px;
+    }
+    .bubble--1::before {
+        border-top: 10px solid #df4661;
+        border-bottom: 10px solid transparent;
+        border-left: 20px solid #df4661;
+        border-right: 20px solid transparent;
+        position: absolute;
+        content: "";
+        bottom: -20px;
+        left: 15px;
+    }
+    .bubble--2::before {
+        border-top: 10px solid #3bbdac;
+        border-bottom: 10px solid transparent;
+        border-right: 20px solid #3bbdac;
+        border-left: 20px solid transparent;
+        position: absolute;
+        content: "";
+        bottom: -20px;
+        right: 15px;
+    }
+    .bubble--1 {
+        background-color: #df4661;
+        float: left;
+    }
+    .bubble--2 {
+        background-color: #3bbdac;
+        float: right;
+    }
