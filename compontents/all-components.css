@@ -40,3 +40,24 @@
     .journal-header h3{color:white;background:#6d6d6d; font-size:22pt;padding:5px;margin:0;}
     .journal-header h4{ margin:0;padding:5px;}
     .journal-entry{padding-left:30px; font-size:11pt;color:#6d6d6d;}
+/*SURVEY*/
+    .survey{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .survey h3{background:#6d6d6d;color:white;font-size:22pt;padding:50px 0px 15px 15px;}
+    .survey-questions{font-size:12pt;}
+    .survey-questions li{min-height:50px;} /*Needs fixed*/
+    .survey-options{font-size:11pt;}
+/*FLIER*/
+    .flier{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';padding:15px 0px;}
+    .flier-header{text-align:center;}
+    .flier-header h3{font-size:26pt; margin:0;}
+    .flier-header h4{font-size:17pt; font-weight:normal; color:#6d6d6d; margin:0;}
+    .flier-body{width:80%; max-width:500px; margin:0 auto; color:#6d6d6d;font-size:13pt;}
+    .flier-body span{font-weight:bold; font-style:italic; color:black;}
+    .flier-footer{text-align:center;font-style:italic; color:#6d6d6d;}
+/*RECIPE*/
+    .recipe{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .recipe .recipe-header{text-align:Center;font-size:22pt; margin:0;padding:15px;}
+    .recipe h4{font-weight:normal;font-size:16pt;margin-bottom:0;}
+    .recipe-ingredients{font-size:11pt; list-style-type:circle;}
+    .recipe-ingredients li{padding:10px 0px; color:#6d6d6d;}
+    .recipe p{font-size:11pt;} /*Needs fixed*/
