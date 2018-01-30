@@ -3,30 +3,32 @@
     .chat::after{content:attr(data-name); position:absolute;bottom:0; right:15px; font-size:13pt;}
     .chat img{margin-right:15px;}
     .chat p{margin-right:15px; font-size:10pt;}
-    .chat--1::before{border-top:10px solid #df4661;border-bottom:10px solid #3bbdac; border-left:20px solid #df4661; border-right:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; left:15px; border-bottom- color:transparent;border-right-color:transparent;}
-    .chat--2::before{border-top:10px solid #3bbdac;border-bottom:10px solid #3bbdac; border-right:20px solid #3bbdac; border-left:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; right:15px; border-bottom-    color:transparent;border-left-color:transparent;}
+    .chat--1::before{border-top:10px solid #df4661;border-bottom:10px solid #3bbdac; border-left:20px solid #df4661; border-right:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; left:15px;
+        border-bottom-color:transparent;border-right-color:transparent;}
+    .chat--2::before{border-top:10px solid #3bbdac;border-bottom:10px solid #3bbdac; border-right:20px solid #3bbdac; border-left:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; right:15px; border-bottom-color:transparent;border-left-color:transparent;}
     .chat--1{ background-color: #df4661;float:left;}
     .chat--2{ background-color: #3bbdac;float:right;}
 /*EMAIL MESSAGES*/
-    .message{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px;}
-    .message-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
-    .message-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
-    .message-header h3,h4{margin:0; font-family:'Open Sans';}
-    .message-header h4{font-weight:normal;}
-    .message-body{padding:15px 0px 0px 30px; font-family:'Open Sans';}
+    .email{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px; font-family:'Open Sans';}
+    .email-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
+    .email-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;}
+    .email-header h3,h4{margin:0;}
+    .email-header h4{font-weight:normal;}
+    .email-body{padding:15px 0px 0px 30px; font-weight:100;}
+    .email-contact{font-weight:100;font-style:italic;}
 /*ADVERTS*/
-    .advert{border-bottom:3px solid #bcbcbc;}
+    .advert{border-bottom:3px solid #bcbcbc;font-family:'Open Sans';}
     .advert > p {border-bottom:3px solid #bcbcbc;font-family:'Open Sans'; width:100%;margin:0;}
     .advert-header{position:relative; display:flex; align-items:center;padding:10px 0px;}
     .advert-header img{padding-right:10px; }
     .advert-header::before{}/*ASSUMING A NEVER-CHANGING AD ICON*/
-    .advert-header h3,h4{margin:0; font-family:'Open Sans'; font-weight:normal;font-size:13pt;}
+    .advert-header h3,h4{margin:0;  font-weight:normal;font-size:13pt;}
     .advert-header h4{color:#bcbcbc; font-size:9pt;}
-    .advert-body{ font-family:'Open Sans'; font-size:11pt; }
+    .advert-body{ font-size:11pt; }
     .advert-body img{width:100%;}
     .advert-declaration{color:#df4661; font-weight:bold; font-size:13pt;}
 /*EXPLAINING/TELLING*/
-    .explain{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans'}
+    .explain{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
     .explain-body .explain-block{font-size:12pt;}
     .explain-body > p {font-size:11pt;}
     .explain-item{position:relative; text-align:center; padding:24px 24px 0px 24px;}
@@ -34,12 +36,12 @@
     .explain-item p::after{border-top:12px solid #5d5d5d;border-bottom:12px solid #5d5d5d; border-right:12px solid transparent; border-left:12px solid #5d5d5d; position:absolute; content:"";right:-12px; top:0;}
     .explain-item img{max-width:100%;}
 /*JOURNAL*/
-    .journal{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans'}
+    .journal{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
     .journal-header{text-align:center;}
     .journal-header p{text-align:left; font-size:12pt;}
     .journal-header h3{color:white;background:#6d6d6d; font-size:22pt;padding:5px;margin:0;}
     .journal-header h4{ margin:0;padding:5px;}
-    .journal-entry{padding-left:30px; font-size:11pt;color:#6d6d6d;}
+    .journal-entry{padding-left:30px; font-size:11pt;font-weight:100;}
 /*SURVEY*/
     .survey{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
     .survey h3{background:#6d6d6d;color:white;font-size:22pt;padding:50px 0px 15px 15px;}
@@ -51,13 +53,44 @@
     .flier-header{text-align:center;}
     .flier-header h3{font-size:26pt; margin:0;}
     .flier-header h4{font-size:17pt; font-weight:normal; color:#6d6d6d; margin:0;}
-    .flier-body{width:80%; max-width:500px; margin:0 auto; color:#6d6d6d;font-size:13pt;}
+    .flier-body{width:80%; max-width:500px; margin:0 auto; font-weight:100;font-size:13pt;}
     .flier-body span{font-weight:bold; font-style:italic; color:black;}
-    .flier-footer{text-align:center;font-style:italic; color:#6d6d6d;}
+    .flier-footer{text-align:center;font-style:italic; font-weight:100;}
 /*RECIPE*/
     .recipe{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
     .recipe .recipe-header{text-align:Center;font-size:22pt; margin:0;padding:15px;}
     .recipe h4{font-weight:normal;font-size:16pt;margin-bottom:0;}
     .recipe-ingredients{font-size:11pt; list-style-type:circle;}
-    .recipe-ingredients li{padding:10px 0px; color:#6d6d6d;}
+    .recipe-ingredients li{padding:10px 0px; font-weight:100;}
     .recipe p{font-size:11pt;} /*Needs fixed*/
+/*SCHEDULE*/
+    .schedule{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .schedule > p{padding:0px 15px;}
+    .schedule-body{font-size:12pt; border-bottom:3px dashed #bcbcbc; border-top:3px dashed #bcbcbc;padding:0px 30px;}
+    .schedule-body h3{font-size:19pt; color:#6d6d6d;}
+    .schedule-body p{color:#5d5d5d;size:11pt;}
+/*LETTER*/
+    .letter{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .letter h3{padding:0px 15px;font-size:11pt;}
+    .letter-body{font-size:12pt;  border-top:3px dashed #bcbcbc;padding:0px 15px;}
+    .letter-body ul{font-weight:100; list-style-type:circle;}
+    .letter-body .letter-contact{font-weight:100; font-style:italic;}
+/*VOICEMAIL*/
+    .voicemail{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .voicemail h3{margin:15px; padding:10px; font-size:19pt; font-weight:normal; background:#6d6d6d;color:white;text-align:center;}
+    .voicemail::after{} /*Phone and Dots icons*/
+    .voicemail p{padding:0px 30px;}
+/*PODCAST*/
+    .podcast{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .podcast-body {padding:0px 30px; font-size:11pt; font-weight:100;}
+    .podcast-header{position:relative; align-items:center;padding:15px;}
+    .podcast-header img{width:100%;}
+    .podcast-header h3{ position:absolute; bottom:0; right:45px; color:white; font-size:19pt;}
+/*BLOG*/
+    .blog{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans'; padding-bottom:50px;}
+    .blog-body {padding:0px 30px; font-size:11pt; font-weight:100;}
+    .blog-header{position:relative; align-items:center;padding:15px;}
+    .blog-header img{width:100%;}
+    .blog-header h3{ position:absolute; bottom:0; left:45px; color:white; font-size:19pt;}
+    .blog-date{font-weight:bold;text-align:center; font-size:10pt;}
+

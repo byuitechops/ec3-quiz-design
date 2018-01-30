@@ -3,22 +3,23 @@
 <head>
 <style>
 .container{width:800px;margin:0 auto;}
-    .message{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px;}
-    .message-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
-    .message-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
-    .message-header h3,h4{margin:0; font-family:'Open Sans';}
-    .message-header h4{font-weight:normal;}
-    .message-body{padding:15px 0px 0px 30px; font-family:'Open Sans'}
+    .email{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px; font-family:'Open Sans';}
+    .email-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
+    .email-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;font-family:'Open Sans', sans-serif;}
+    .email-header h3,h4{margin:0; font-family:'Open Sans';}
+    .email-header h4{font-weight:normal;}
+    .email-body{padding:15px 0px 0px 30px; font-weight:100;}
+    .email-contact{font-weight:100;font-style:italic;}
 </style>
 </head>
  <body>
 <div class="container">
-    <div class="message">
-        <div class="message-header" data-initials="JD">
+    <div class="email">
+        <div class="email-header" data-initials="JD">
             <h3>John Doe</h3>
             <h4>jondoe234@byui.edu</h4>
         </div>
-        <div class="message-body">
+        <div class="email-body">
             <p>Hello Everyone,</p>
             <p>Winter break is almost here! Please read this email carefully. There are some important announcements and reminders in this email.</p>
             <p>1. We will have a cleaning check on Saturday, January 21st after the break. We will send another email about this soon. The next email will have more information about the cleaning check.</p>
@@ -26,10 +27,10 @@
             <p>3. We know that some of you will be gone during the winter break. Remember that nobody can live in your apartment while you are gone.</p>
             <p>This means family, friends, and guests may not stay there if you are not there. It is against the rules.</p>
             <p>Thank you for everything that you do to make Palm Apartments great. Please tell us if there is anything we can do for you. HAPPY HOLIDAYS!</p>
-            <p><em>
+            <p class="email-contact">
            Palm Apartments Office OFFICE HOURS
               <br>  Office: (423)611-2189 Monday-Saturday: 8am-6pm
-    <br>    Emergency Number: (423)745-9712</em>
+                <br>    Emergency Number: (423)745-9712</p>
 
         </div>
     </div>
