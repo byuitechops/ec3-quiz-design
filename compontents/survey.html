@@ -2,13 +2,26 @@
 
 <head>
 <style>
-.container{max-width:800px;margin:0 auto;}
-  .survey{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+.container label{max-width:800px;margin:0 auto;}
+    .survey{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
     .survey h3{background:#6d6d6d;color:white;font-size:22pt;padding:50px 0px 15px 15px;}
     .survey-questions{font-size:12pt;}
-    .survey-questions li{min-height:50px;} /*Needs fixed*/
+    .survey-questions li{min-height:50px;} /*?*/
     .survey-options{font-size:11pt;}
-
+    /*NOTE: Columns do not flow the same as they do in the mockup.*/
+    .survey-questions div{display:flex; flex-flow:wrap; width:50%;margin:10px 0;}
+    .survey-questions label {width:calc(33% - 20px); flex-grow:1; }
+    /* fancy checkbox nonsense*/
+    .survey-questions label {display: block; position: relative; padding-left: 20px; margin-bottom: 10px; cursor: pointer;
+        -webkit-user-select: none;        -moz-user-select: none;        -ms-user-select: none;        user-select: none;}
+    .survey-questions label input {position: absolute;    opacity: 0;    cursor: pointer;}
+    /* POSSIBLY REPLACE WITH AN ::AFTER*/
+    .checkmark {position: absolute; top: 3px;left: 0;height: 16px;width: 16px;background-color: #eee;border:1px solid black;}
+    .survey-questions label input:checked ~ .checkmark {background-color: white; border:1px solid black; box-sizing:border-box;}
+    .checkmark:after {content: ""; position: absolute; display: none;}
+    .survey-questions label input:checked ~ .checkmark:after {display: block; }
+    .survey-questions label .checkmark:after { left: 7px; top: -10px; width: 7px;height: 20px;border: solid green;
+        border-width: 0 2px 2px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
 </style>
 </head>
 <body>
@@ -20,12 +33,36 @@
             <li>What kind of music do you listen to?</li>
             <li>Who are your favorite singers or bands?</li>
             <li>Can music change the way you feel?</li>
-            <li>Which types of music can change the way you feel?</li>
+            <li>Which types of music can change the way you feel?
+                <div>
+                <label><input disabled checked type="checkbox">Pop<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Classical<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Rock<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Rap<span class="checkmark"></span></label>
+               <label > <input disabled checked type="checkbox">Jazz<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Electric<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Other<span class="checkmark"></span></label>
+                </div>
+
+            </li>
             <li>Why does this music change the way you feel? And how?</li>
             <li>Can listening to music make you smarter?</li>
             <li>How do you choose which music to listen to?</li>
-            <li>What kind of music causes you to feel negative?</li>
-            <li>What kind of music makes you feel positive?</li>
+            <li>What kind of music causes you to feel negative?
+                            <div>
+                <label><input disabled checked type="checkbox">Country<span class="checkmark"></span></label>
+
+                </div></li>
+            <li>What kind of music makes you feel positive?
+                            <div>
+                <label><input disabled checked type="checkbox">Pop<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Classical<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Rock<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Rap<span class="checkmark"></span></label>
+               <label > <input disabled  checked type="checkbox">Jazz<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Electric<span class="checkmark"></span></label>
+               <label > <input  disabled type="checkbox">Other<span class="checkmark"></span></label>
+                </div></li>
             <li>Is learning how to play a musical instrument important?</li>
             <li>Do you think music helps you in your life?</li>
         </ol>

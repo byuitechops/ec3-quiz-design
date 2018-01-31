@@ -7,3 +7,7 @@
 * Are you wanting re-usable classes that can apply to different components? For instance, I see "head" in a bunch of places and "block." Are these supposed to all be the same?
 * Are the surveys pre-filled or user fillable?
 * Are we expecting options for checking and unchecking the survey boxes?
+
+* Rows/Columns for the surveys, do they have a max height and spread horizontally, or a max width and flow vertically?
+
+*MODIFY CHAT

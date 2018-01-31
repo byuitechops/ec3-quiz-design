@@ -9,7 +9,7 @@
 .chat--1{ background-color: #df4661;align-self:flex-start;}
 .chat--2{ background-color: #3bbdac;align-self:flex-end;}
 /*EMAIL MESSAGES*/
-    .email{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px; font-family:'Open Sans';}
+    .email{border-top:3px solid #bcbcbc; border-bottom:3px solid #bcbcbc;padding-bottom:50px; font-family:'Open Sans',sans-serif;}
     .email-header{border-bottom:3px dashed #bcbcbc; padding:30px;position:relative; padding-left:105px;}
     .email-header::before{background-color:#bcbcbc; color:white; position:absolute; left:0;top:15px;content:attr(data-initials); border-radius:9999em; width:75px;height:75px;text-align:center;line-height:75px;font-size:25pt;}
     .email-header h3,h4{margin:0;}
@@ -17,8 +17,8 @@
     .email-body{padding:15px 0px 0px 30px; font-weight:100;}
     .email-contact{font-weight:100;font-style:italic;}
 /*ADVERTS*/
-    .advert{border-bottom:3px solid #bcbcbc;font-family:'Open Sans';}
-    .advert > p {border-bottom:3px solid #bcbcbc;font-family:'Open Sans'; width:100%;margin:0;}
+    .advert{border-bottom:3px solid #bcbcbc;font-family:'Open Sans',sans-serif;}
+    .advert > p {border-bottom:3px solid #bcbcbc;font-family:'Open Sans',sans-serif; width:100%;margin:0;}
     .advert-header{position:relative; display:flex; align-items:center;padding:10px 0px;}
     .advert-header img{padding-right:10px; }
     .advert-header::before{}/*ASSUMING A NEVER-CHANGING AD ICON*/
@@ -28,7 +28,7 @@
     .advert-body img{width:100%;}
     .advert-declaration{color:#df4661; font-weight:bold; font-size:13pt;}
 /*EXPLAINING/TELLING*/
-    .explain{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .explain{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .explain-body .explain-block{font-size:12pt;}
     .explain-body > p {font-size:11pt;}
     .explain-item{position:relative; text-align:center; padding:24px 24px 0px 24px;}
@@ -36,7 +36,7 @@
     .explain-item p::after{border-top:12px solid #5d5d5d;border-bottom:12px solid #5d5d5d; border-right:12px solid transparent; border-left:12px solid #5d5d5d; position:absolute; content:"";right:-12px; top:0;}
     .explain-item img{max-width:100%;}
 /*JOURNAL*/
-    .journal{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .journal{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .journal-header{text-align:center;}
 .journal-header img{width:100%;}
     .journal-header p{text-align:left; font-size:12pt;}
@@ -47,10 +47,24 @@
     .survey{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
     .survey h3{background:#6d6d6d;color:white;font-size:22pt;padding:50px 0px 15px 15px;}
     .survey-questions{font-size:12pt;}
-    .survey-questions li{min-height:50px;} /*Needs fixed*/
+    .survey-questions li{min-height:50px;} /*?*/
     .survey-options{font-size:11pt;}
+    /*NOTE: Columns do not flow the same as they do in the mockup.*/
+    .survey-questions div{display:flex; flex-flow:wrap; width:50%;margin:10px 0;}
+    .survey-questions label {width:calc(33% - 20px); flex-grow:1; }
+    /* fancy checkbox nonsense*/
+    .survey-questions label {display: block; position: relative; padding-left: 20px; margin-bottom: 10px; cursor: pointer;
+        -webkit-user-select: none;        -moz-user-select: none;        -ms-user-select: none;        user-select: none;}
+    .survey-questions label input {position: absolute;    opacity: 0;    cursor: pointer;}
+    /* POSSIBLY REPLACE WITH AN ::AFTER*/
+    .checkmark {position: absolute; top: 3px;left: 0;height: 16px;width: 16px;background-color: #eee;border:1px solid black;}
+    .survey-questions label input:checked ~ .checkmark {background-color: white; border:1px solid black; box-sizing:border-box;}
+    .checkmark:after {content: ""; position: absolute; display: none;}
+    .survey-questions label input:checked ~ .checkmark:after {display: block; }
+    .survey-questions label .checkmark:after { left: 7px; top: -10px; width: 7px;height: 20px;border: solid green;
+        border-width: 0 2px 2px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
 /*FLIER*/
-    .flier{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';padding:15px 0px;}
+    .flier{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;padding:15px 0px;}
     .flier-header{text-align:center;}
     .flier-header h3{font-size:26pt; margin:0;}
     .flier-header h4{font-size:17pt; font-weight:normal; color:#6d6d6d; margin:0;}
@@ -58,7 +72,7 @@
     .flier-body span{font-weight:bold; font-style:italic; color:black;}
     .flier-footer{text-align:center;font-style:italic; font-weight:100;}
 /*RECIPE*/
-    .recipe{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .recipe{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .recipe .recipe-header{text-align:Center;font-size:22pt; margin:0;padding:15px;}
 .recipe img{width:100%;}
     .recipe h4{font-weight:normal;font-size:16pt;margin-bottom:0;}
@@ -66,30 +80,30 @@
     .recipe-ingredients li{padding:10px 0px; font-weight:100;}
     .recipe p{font-size:11pt;} /*Needs fixed*/
 /*SCHEDULE*/
-    .schedule{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .schedule{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .schedule > p{padding:0px 15px;}
     .schedule-body{font-size:12pt; border-bottom:3px dashed #bcbcbc; border-top:3px dashed #bcbcbc;padding:0px 30px;}
     .schedule-body h3{font-size:19pt; color:#6d6d6d;}
     .schedule-body p{color:#5d5d5d;size:11pt;}
 /*LETTER*/
-    .letter{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .letter{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .letter h3{padding:0px 15px;font-size:11pt;}
     .letter-body{font-size:12pt;  border-top:3px dashed #bcbcbc;padding:0px 15px;}
     .letter-body ul{font-weight:100; list-style-type:circle;}
     .letter-body .letter-contact{font-weight:100; font-style:italic;}
 /*VOICEMAIL*/
-    .voicemail{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .voicemail{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .voicemail h3{margin:15px; padding:10px; font-size:19pt; font-weight:normal; background:#6d6d6d;color:white;text-align:center;}
     .voicemail::after{} /*Phone and Dots icons*/
     .voicemail p{padding:0px 30px;}
 /*PODCAST*/
-    .podcast{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans';}
+    .podcast{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif;}
     .podcast-body {padding:0px 30px; font-size:11pt; font-weight:100;}
     .podcast-header{position:relative; align-items:center;padding:15px;}
     .podcast-header img{width:100%;}
     .podcast-header h3{ position:absolute; bottom:0; right:45px; color:white; font-size:19pt;}
 /*BLOG*/
-    .blog{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans'; padding-bottom:50px;}
+    .blog{border-bottom:3px solid #bcbcbc;border-top:3px solid #bcbcbc; font-family:'Open Sans',sans-serif; padding-bottom:50px;}
     .blog-body {padding:0px 30px; font-size:11pt; font-weight:100;}
     .blog-header{position:relative; align-items:center;padding:15px;}
     .blog-header img{width:100%;}
