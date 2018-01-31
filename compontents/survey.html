@@ -12,9 +12,9 @@
     .survey-questions div{display:flex; flex-flow:wrap; width:50%;margin:10px 0;}
     .survey-questions label {width:calc(33% - 20px); flex-grow:1; }
     /* fancy checkbox nonsense*/
-    .survey-questions label {display: block; position: relative; padding-left: 20px; margin-bottom: 10px; cursor: pointer;
+    .survey-questions label {display: block; position: relative; padding-left: 20px; margin-bottom: 10px;
         -webkit-user-select: none;        -moz-user-select: none;        -ms-user-select: none;        user-select: none;}
-    .survey-questions label input {position: absolute;    opacity: 0;    cursor: pointer;}
+    .survey-questions label input {position: absolute;    opacity: 0;   }
     /* POSSIBLY REPLACE WITH AN ::AFTER*/
     .checkmark {position: absolute; top: 3px;left: 0;height: 16px;width: 16px;background-color: #eee;border:1px solid black;}
     .survey-questions label input:checked ~ .checkmark {background-color: white; border:1px solid black; box-sizing:border-box;}

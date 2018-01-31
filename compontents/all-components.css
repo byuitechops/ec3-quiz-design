@@ -3,7 +3,7 @@
 .chat{padding:15px; color: white; font-size:13pt; border-radius: 15px; font-family:sans-serif;position:relative;margin-bottom:25px; max-width:80%;display:flex; align-items:center;}
 .chat::after{content:attr(data-name); position:absolute;bottom:0; right:15px; font-size:13pt;}
 .chat img{margin-right:15px;}
-.chat p{margin-right:15px; font-size:10pt;}
+.chat p{ font-size:10pt;}
 .chat--1::before{border-top:10px solid #df4661;border-bottom:10px solid #3bbdac; border-left:20px solid #df4661; border-right:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; left:15px; border-bottom-color:transparent;border-right-color:transparent;}
 .chat--2::before{border-top:10px solid #3bbdac;border-bottom:10px solid #3bbdac; border-right:20px solid #3bbdac; border-left:20px solid #3bbdac;position:absolute; content:""; bottom:-20px; right:15px; border-bottom-color:transparent;border-left-color:transparent;}
 .chat--1{ background-color: #df4661;align-self:flex-start;}
@@ -53,9 +53,9 @@
     .survey-questions div{display:flex; flex-flow:wrap; width:50%;margin:10px 0;}
     .survey-questions label {width:calc(33% - 20px); flex-grow:1; }
     /* fancy checkbox nonsense*/
-    .survey-questions label {display: block; position: relative; padding-left: 20px; margin-bottom: 10px; cursor: pointer;
+    .survey-questions label {display: block; position: relative; padding-left: 20px; margin-bottom: 10px;
         -webkit-user-select: none;        -moz-user-select: none;        -ms-user-select: none;        user-select: none;}
-    .survey-questions label input {position: absolute;    opacity: 0;    cursor: pointer;}
+    .survey-questions label input {position: absolute;    opacity: 0;   }
     /* POSSIBLY REPLACE WITH AN ::AFTER*/
     .checkmark {position: absolute; top: 3px;left: 0;height: 16px;width: 16px;background-color: #eee;border:1px solid black;}
     .survey-questions label input:checked ~ .checkmark {background-color: white; border:1px solid black; box-sizing:border-box;}
