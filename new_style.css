@@ -40,6 +40,9 @@ p {
     margin-left: 31px;
     line-height: 15pt;
 }
+ol {
+    padding-bottom: 10px;
+}
 .aside,
 .subhead {
     font-size: 11pt;
