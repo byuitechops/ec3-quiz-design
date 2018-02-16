@@ -1,6 +1,6 @@
 /*CHAT BUBBLES*/
     .chat-box{ border-top:3px solid #6d6d6d; border-bottom:3px solid #6d6d6d; padding:15px;display:flex;flex-direction:column;}
-.chat{padding:15px; color: white; font-size:13pt; font-weight:bold; border-radius: 15px; font-family:sans-serif;position:relative;margin-bottom:25px; max-width:80%;display:flex; align-items:center;}
+.chat{padding:15px; color: white; font-size:13pt; border-radius: 15px; font-family:sans-serif;position:relative;margin-bottom:25px; max-width:80%;display:flex; align-items:center;}
 .chat::after{content:attr(data-name); position:absolute;bottom:0; right:15px; font-size:13pt;}
 .chat img{margin-right:15px;}
 .chat p{ font-size:10pt;}
