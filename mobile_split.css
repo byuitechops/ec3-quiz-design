@@ -1,0 +1,133 @@
+* {
+    font-family: "Open Sans";
+}
+h1 {
+    font-size: 30pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+    margin-left: 0px;
+    padding-left: 16px;
+    padding-right: 9px;
+}
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: white;
+    margin-left: 31px;
+    padding-left: 16px;
+    padding-right: 9px;
+    background-color: #df4661;
+    position: relative;
+}
+h2::before {
+    position: absolute;
+    content: '';
+    width: 2em;
+    background-color: #df4661;
+    height: 2em;
+    left: -31;
+    border-radius: 9999em;
+    top: calc(-.5em + 3px);
+    /*account for padding*/
+}
+p {
+    font-size: 12pt;
+    color: black;
+    margin-left: 31px;
+    line-height: 15pt;
+}
+.aside,
+.subhead {
+    font-size: 11pt;
+    margin-left: 41px;
+}
+.subhead {
+    font-weight: bold;
+    color: #df4661;
+    padding-right: 8px;
+}
+.question {
+    font-size: 10pt;
+    color: #5d5d5d;
+}
+
+/********ANSWERS**************/
+
+.answer-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+.answer-ul .answer {
+    margin: 0.8rem 0 0 0;
+    color: #333333;
+    font-weight: 500;
+
+
+    font-size: 1.0rem;
+    background-color: #ffffff;
+
+    cursor: pointer;
+    display: flex;
+}
+.answer-ul .answer p {
+    margin: 0;
+    padding: 2px;
+}
+.answer-ul .answer span.option {
+    font-size: 1.25rem;
+    background-color: #F1F1F3;
+    border: solid 1px #888b8d;
+    border-radius: 9999em;
+    width: 2.25em;
+    height: 2.25em;
+    line-height:2.25em;
+    text-align:center;
+    margin:0;
+    padding:0;
+
+}
+.answer-ul .answer span.option ~ div{
+    line-height:3rem; margin:0;padding:0;
+    margin-left:12px;
+}
+
+.answer-ul .answer span.option.selected {
+    color: #ffffff;
+    background-color: #005F83;
+}
+.answer-ul .answer.selected {
+    background-color: #ddf2fa;
+}
+.answer-ul .answer.wrong {
+    background-color: #BC242D;
+}
+.answer-ul .answer.correct {
+    background-color: #00CA00;
+}
+.answer-ul .answer.disabled {
+    background-color: #ffffff !important;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    -moz-opacity: 0.50;
+}
+/**************************************/
+.test > div:first-child > div:first-child{
+    height:30vh;
+    overflow:auto;
+}
+.test > div:first-child > div:last-child{
+    position:fixed;bottom:15px;
+}
+#answers{
+    height:60vh;
+    position:fixed;
+    margin-bottom:0;
+    overflow:auto;
+}
