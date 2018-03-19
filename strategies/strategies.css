@@ -10,6 +10,7 @@ body{margin:0;}
 .dark-blue{background-color:#015E82;}
 .text-dark-blue{color:#015E82;}
 .blue{background-color:#1D9CD4;}
+.grey{background-color:#5d5d5d;}
 .pink{background-color:#df4661;}
 .text-pink{color:#df4661;}
 .light-grey{background-color:#d5d5d5;}
@@ -20,47 +21,50 @@ body{margin:0;}
 .light-green{background-color:#eff7e7;}
 
 .callout{
-padding-top:35px; margin-top:-50px;  padding-left:25px; padding-right:25px; margin-left:15px; padding-bottom:15px;
+padding-top:35px; margin-top:-50px;  padding-left:25px; padding-right:25px; margin-left:15px; padding-bottom:15px;  
 }
 
 .callout ul{list-style-type:square;}
 .callout ul li{font-style:italic;}
 .callout p {margin:0;}
 
-.aside{margin-left:35px;margin-top:10px;color:#444}
+.aside{margin-left:35px;margin-top:10px;margin-bottom:10px;color:#444;}
+.aside_small{margin-left:10px;margin-top:10px;margin-bottom:10px;color:#444;}
+.aside_left{margin-left:10px;margin-top:10px;margin-bottom:10px;color:#444;float:left;}
+.aside_right{margin-left:10px;margin-top:10px;margin-bottom:10px;color:#444;float:right;}
 .aside strong{color:black;}
 
 .bold{font-weight:bold;}
 .indent{padding-left:15px;}
 
-.banner{color:white;margin-top:50px;color:;}
+.banner{color:white;margin-top:50px;}
 .banner h1{margin:0;padding-top:10px; font-size: 30pt;}
 .banner h2{margin:0;padding-bottom:10px;font-weight:normal;}
-.banner-sub{margin-top:0;font-size:14pt;}
+.banner-sub{margin-top:10px;font-size:14pt;}
 
-.flag{display:inline-block; padding:0px 10px; width:calc(50% - 40px); font-size:24pt;height:40px;}
-.green-flag::after{
+.flag{display:inline-block; padding:0px 10px; font-size:24pt;height:40px;}
+.green-flag::after{    
     position:absolute;
     content: "";
-    left:calc(50% - 20px);
+    float: left;
     border: 20px solid #82C242;
     border-right-color: transparent;}
-.blue-flag::after{
+.blue-flag::after{    
     position:absolute;
     content: "";
-    left:calc(50% - 20px);
+    float: left;
     border: 20px solid #1D9CD4;
     border-right-color: transparent;}
-.pink-flag::after{
+.pink-flag::after{    
     position:absolute;
     content: "";
-    left:calc(50% - 20px);
+    float: left;
     border: 20px solid #df4661;
     border-right-color: transparent;}
-.grey-flag::after{
+.grey-flag::after{    
     position:absolute;
     content: "";
-    left:calc(50% - 20px);
+    float: left;
     border: 20px solid #5d5d5d;
     border-right-color: transparent;}
 
