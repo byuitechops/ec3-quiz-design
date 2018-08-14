@@ -39,7 +39,7 @@ padding-top:35px; margin-top:-50px;  padding-left:25px; padding-right:25px; marg
 
 .banner{color:white;margin-top:50px;}
 .banner h1{margin:0;padding-top:10px; font-size: 30pt;}
-.banner h2{margin:0;padding-bottom:10px;font-weight:normal;}
+.banner h2{margin:0;padding-top:10px; padding-bottom:10px;font-weight:normal;}
 .banner-sub{margin-top:10px;font-size:14pt;}
 
 .flag{display:inline-block; padding:0px 10px; font-size:24pt;height:40px;}
