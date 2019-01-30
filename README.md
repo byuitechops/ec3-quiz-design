@@ -1,5 +1,6 @@
 # ec3-quiz-design
 
+## Description
 This repo houses the custom CSS for EC3 quizzes. 
 
 The components folder holds the files for individual CSS componenets such as chat bubbles, email messages, and advertisements. 
@@ -18,3 +19,6 @@ These styles were commissioned by Ted Finch's team. They now have access to the 
 
 * strategies.css (custom classes for the strategies page)
 * strategies.html (an example page based on a pdf mockup from Ted Finch)
+
+## How to Use
+Navigate to [this link](https://byuitechops.github.io/ec3-quiz-design/)
